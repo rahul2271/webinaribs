@@ -1,0 +1,10 @@
+.image {
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 2px;
+  }
+  
+  .image:hover {
+    transform: none;
+  }
+  

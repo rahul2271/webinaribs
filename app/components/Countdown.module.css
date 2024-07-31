@@ -1,0 +1,19 @@
+/* Countdown.module.css */
+.timer {
+    display: flex;
+    justify-content: space-around;
+    font-size: 2rem;
+    color: #ff6600; /* Orange color */
+  }
+  
+  .unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .unit span {
+    font-size: 4rem;
+    color: #4b0082; /* Purple color */
+  }
+  
