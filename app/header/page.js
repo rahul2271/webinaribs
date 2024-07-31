@@ -34,7 +34,7 @@ export default function Header(){
             </li> 
             <li>
               <Link className="animate-pulse hover:text-mypurple" href="/#forem">
-              CONTACT US
+              REGISTER NOW
               </Link>
             </li>
             <li className="hidden">
