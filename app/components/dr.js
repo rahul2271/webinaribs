@@ -11,7 +11,7 @@ export default function Doctor() {
         </div>
         <div className="flex-shrink-0">
 
-          <Image src="/d2.PNG" alt="Dr. Suhas Sakhare" width={500} height={500} className="rounded-lg" />
+          <Image src="/d2.png" alt="Dr. Suhas Sakhare" width={500} height={500} className="rounded-lg" />
         </div>
         <div className="mt-4 md:mt-0 md:ml-6 flex flex-col justify-between">
           <div>
