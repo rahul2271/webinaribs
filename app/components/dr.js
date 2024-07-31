@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link';
 
 export default function Doctor() {
   return (
@@ -39,9 +40,9 @@ export default function Doctor() {
             </ul>
           </div>
           <div className="mt-6 text-center md:text-left">
-            <a href="#" className="inline-block bg-[#F14A04] text-white py-2 px-4 rounded-full font-semibold hover:bg-[#F14A04]/50">
+            <Link href="#forem" className="inline-block bg-[#F14A04] text-white py-2 px-4 rounded-full font-semibold hover:bg-[#F14A04]/50">
               Register Now
-            </a>
+            </Link>
           </div>
         </div>
       </div>
