@@ -34,7 +34,7 @@ const WebinarSection = () => {
           </div>
         </div>
         <div className="mt-12 text-center">
-          <h3 className="md:text-7xl text-2xl font-extrabold text-[#47126B]">Get a E-Book</h3>
+          <h3 className="md:text-7xl text-2xl animate-ping font-extrabold text-[#47126B]">Get a E-Book</h3>
           <p className="animate-bounce text-orange-600 text-6xl font-extrabold mt-2">FREE</p>
         </div>
       </div>
