@@ -5,9 +5,15 @@ export async function POST(req) {
   try {
     const { orderId, amount, customerName, customerEmail, customerPhone } = await req.json();
 
-    // Create Order on Cashfree
+    // Choose endpoint based on environment
+    const CASHFREE_URL =
+      process.env.NODE_ENV === "production"
+        ? "https://api.cashfree.com/pg/orders"
+        : "https://sandbox.cashfree.com/pg/orders";
+
+    // Create order on Cashfree
     const response = await axios.post(
-      "https://api.cashfree.com/pg/orders", // PRODUCTION endpoint
+      CASHFREE_URL,
       {
         order_id: orderId,
         order_amount: amount,
@@ -34,10 +40,11 @@ export async function POST(req) {
       }
     );
 
-    // Extract payment link
-    const paymentLink = response.data.payment_link;
+    console.log("Cashfree API raw response:", response.data);
 
-    return NextResponse.json({ paymentLink });
+    return NextResponse.json({
+      paymentLink: response.data.payment_link, // ✅ Correct key
+    });
   } catch (error) {
     console.error("Cashfree API Error:", error.response?.data || error.message);
     return NextResponse.json(
