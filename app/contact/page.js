@@ -9,7 +9,7 @@ import WebinarSection from '../components/WebinarSection';
 import Testimonials from '../components/Testimonials';
 import Link from 'next/link';
 import Youtube from '../components/youtube';
-import RegPage from '../components/registeration';
+
 
 
  const eventDate = '2024-08-05T00:00:00'
@@ -99,7 +99,7 @@ const Form = () => {
                 {/* <p className="font-light text-left mt-4 text-lg md:text-sm text-[#2C3753]">
                   Submit Your Details Now, to Get a Call Back!!!
                 </p> */}
-                {/* <form onSubmit={handleSubmit}  className="item-center mt-8 space-y-4">
+                <form onSubmit={handleSubmit}  className="item-center mt-8 space-y-4">
                   <div className="grid w-full gap-y-4 md:gap-x-4 lg:grid-cols-2">
                     <div className="grid w-full items-center gap-1.5">
                       <label className="text-sm font-medium leading-none text-black peer-disabled:cursor-not-allowed peer-disabled:opacity-70" htmlFor="fullName">
@@ -176,8 +176,7 @@ const Form = () => {
                     
   
                   </div>
-                </form> */}
-                <RegPage/>
+                </form>
               </div>
             </div>
             
