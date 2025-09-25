@@ -20,7 +20,7 @@ const Carousel = () => {
     <div className='' >
       <Slider {...settings}>
         <div>
-          <img src="./Banner2.jpg" alt="Slide 1"  />
+          <img src="./Banner22.jpg" alt="Slide 1"  />
         </div>
         <div>
           <img src="./Banner1.jpg" alt="Slide 2" />
