@@ -5,28 +5,44 @@ export async function POST(req) {
   try {
     const { orderId, amount, customerName, customerEmail, customerPhone } = await req.json();
 
+    // Create Order on Cashfree
     const response = await axios.post(
-      "https://test.cashfree.com/api/v2/cftoken/order",
+      "https://api.cashfree.com/pg/orders", // PRODUCTION endpoint
       {
-        orderId,
-        orderAmount: amount,
-        orderCurrency: "INR",
-        customerName,
-        customerEmail,
-        customerPhone,
-        returnUrl: "https://yourwebsite.com/payment-success",
+        order_id: orderId,
+        order_amount: amount,
+        order_currency: "INR",
+        customer_details: {
+          customer_id: customerPhone,
+          customer_name: customerName,
+          customer_email: customerEmail,
+          customer_phone: customerPhone,
+        },
+        order_note: "Webinar Registration - Yukti Herbs",
+        order_meta: {
+          return_url: `https://webinars.yuktiherbs.com/payment-success?order_id=${orderId}`,
+          notify_url: "https://webinars.yuktiherbs.com/api/payment-webhook",
+        },
       },
       {
         headers: {
           "x-client-id": process.env.CASHFREE_APP_ID,
           "x-client-secret": process.env.CASHFREE_SECRET_KEY,
+          "x-api-version": "2022-09-01",
           "Content-Type": "application/json",
         },
       }
     );
 
-    return NextResponse.json({ paymentLink: response.data.paymentLink });
+    // Extract payment link
+    const paymentLink = response.data.payment_link;
+
+    return NextResponse.json({ paymentLink });
   } catch (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    console.error("Cashfree API Error:", error.response?.data || error.message);
+    return NextResponse.json(
+      { error: error.response?.data || error.message },
+      { status: 500 }
+    );
   }
 }
