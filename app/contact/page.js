@@ -12,7 +12,8 @@ import Youtube from '../components/youtube';
 
 
 
- const eventDate = '2025-09-30T00:00:00'
+ const eventDate = '2025-09-30T14:00:00';
+
 
 const Form = () => {
   const [showTick, setShowTick] = useState(false);
